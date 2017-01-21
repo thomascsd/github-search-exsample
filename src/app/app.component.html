@@ -1,3 +1,24 @@
-<h1>
-  {{title}}
-</h1>
+<div class="well" *ngIf="!!user">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2>
+                {{user.login}}
+            </h2>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="{{user.avatar_url}}" />
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="{{user.html_url}}" target="_blank">User page</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

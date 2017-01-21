@@ -8,12 +8,23 @@ import { GithubService } from './github.service';
 })
 export class AppComponent implements OnInit {
   
+  user: any;
+  
   constructor(private service: GithubService){
     
   }
   
   ngOnInit(){
-    
+   
   }
+  
+  getData(username: string){
+    this.service
+    .getUser(username)
+    .subcribe((data) => {
+      this.user = data;
+    });
+  }
+  
  
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import 'rxjs';
 
 @Injectable()
 export class GithubService {
@@ -9,7 +10,7 @@ export class GithubService {
   constructor(private http: Http) { }
   
   getUser(username: string){
-      const url =`https://api.github.com/users/${username}?client_id=${clientId}&client_secret=${clientSecret}`;
+      const url =`https://api.github.com/users/${username}?client_id=${this.clientId}&client_secret=${this.clientSecret}`;
       return this.http.get(url).map(res => res.json());
   }
 
