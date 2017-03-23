@@ -15,13 +15,13 @@ export class AppComponent implements OnInit {
   }
   
   ngOnInit(){
-   
+   this.getData('thomascsd');
   }
   
   getData(username: string){
     this.service
     .getUser(username)
-    .subcribe((data) => {
+    .subscribe((data) => {
       this.user = data;
     });
   }
